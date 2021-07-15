@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../reset.css">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link rel="stylesheet" type="text/css" href="../table.css">
+    <link rel="stylesheet" type="text/css" href="../popup.css">
+    <link rel="stylesheet" type="text/css" href="color.css">
+  </head>
+
+  <header>
+    
+    <h2>Ethicart</h2>
+    <h3>FC加盟店：アカウント名</h3>
+    <h1 class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+          <nuv>
+            <menu-title>
+                <in-title>Ethicart</in-title>
+            </menu-title>
+            <ul>
+                <li>
+                    <li><a href="../user-change.html">ユーザー切替</a></li>
+                </li>
+                <li>
+                    <li><a href="info.html">TOP</a></li>
+                </li>
+                <li>
+                    <li><a href="./karte.html">顧客</a></li>
+                </li>
+                <li>
+                    <li><a href="./menu.html">メニュー</a></li>
+                </li>
+                <li>
+                    <li><a href="./order.html">オーダー</a></li>
+                </li>
+                <li>
+                    <li><a href="./schedule.html">スタッフ/スケジュール</a></li>
+                </li>
+                <li>
+                    <li><a href="./info.html">お知らせ</a></li>
+                </li>
+            </ul>
+          </nuv>
+        </div>
+        <!--ここまでメニュー-->
+    </h1>
+
+
+  </header>
+
+  <menu></menu>
+  <main>
+    <!--ぱんくず-->
+    <div class="cp_breadcrumb">
+    <ul class="breadcrumbs">
+    <li><a href="info.html">TOP</a></li>
+    <li>顧客情報検索</li>
+    </ul>
+    </div>
+
+
+      <h4>顧客情報検索</h4>
+      <br>
+      <br>
+      <!--簡易検索-->
+      <p>
+        <input id="radio-a" type="radio" name="search" value="女" checked><label for="radio-a">性別：女</label>
+        <input id="radio-b" type="radio" name="search" value="男"><label for="radio-b">性別：男</label><br>
+      </p>
+      <br>
+
+      <p  style="color: var(--main-on-color)" id="output-message"></p>
+      <p  style="color: var(--main-on-color)"><span id="span1"></span></p>
+      
+
+      <br>
+      <!--詳細条件検索-->
+      <h5>
+        <div class="popup_wrap">
+          <input style="display: none" id="karte-search" type="checkbox">
+          <div class="popup_overlay">
+            <label for="karte-search" class="popup_trigger"></label>
+            <div class="popup_content">
+              <label for="karte-search" class="close_btn">×</label>
+              <form action="" method="get" name="karte_form">
+                <label>id:</label><br>
+                <input type="number" name="id" value="000000" id="input-id"><br><br>
+                <label>氏名:</label><br>
+                <input type="text" name="name" value="abc" id="input-name">
+                <br>
+                <br>
+                <label>性別：</label>
+                <select name="gender" id="input-gender">
+                  <option value="選択なし">選択なし</option>
+                  <option value="女">女</option>
+                  <option value="男">男</option>
+                </select>
+                <br>
+                <br>
+                <label>お知らせ：</label>
+                <select name="info" id="input-info">
+                  <option value="選択なし">選択なし</option>
+                  <option value="受け取らない">受け取らない</option>
+                  <option value="受け取る">受け取る</option>
+                </select>
+                <br>
+                <br>
+                <label>登録日時:</label><br>
+                <input type="datetime-local" name="signup-date-start" value="2021-05-13T15:15" id="input-signup-date-start">
+                <br>
+                <label>　～　</label>
+                <br>
+                <input type="datetime-local" name="signup-date-end" value="2021-05-13T15:15" id="input-signup-date-end">
+                <br>
+                <br>
+                <label>アンケート:</label><br>
+                <input id="input-route-a" type="checkbox" name="route" value="SNS" >
+                <label for="SNS">SNS</label>
+                <input id="input-route-a" type="checkbox" name="route" value="広告" >
+                <label for="広告">広告</label>
+                <input id="input-route-a" type="checkbox" name="route" value="雑誌" >
+                <label for="雑誌">雑誌</label>
+                <input id="input-route-a" type="checkbox" name="route" value="知人からの紹介" >
+                <label for="知人からの紹介">知人からの紹介</label>
+              </form>
+              <br>
+              <h5>
+              <p id="output-message"></p>
+              <button onClick="return checkKarteSearch();" >確定</button>
+
+              </h5>
+
+            </div>
+          </div>
+        </div>
+        
+      <label for="karte-search" class="open_btn">詳細条件検索</label>
+      </h5>
+      <!--新規追加-->
+      <h5 style="padding:0px 0px 0px 20px">
+        <div class="popup_wrap">
+          <input style="display: none" id="add-karte" type="checkbox">
+          <div class="popup_overlay">
+            <label for="add-karte" class="popup_trigger"></label>
+            <div class="popup_content">
+              <label for="add-karte" class="close_btn">×</label>
+                <label>id:</label><br>
+                <input type="number" name="id" value="000000" id="input-id"><br><br>
+                <label>氏名:</label><br>
+                <input type="text" name="name" value="abc" id="input-name">
+                <br>
+                <br>
+                <label>性別：</label>
+                <select name="gender" id="input-gender">
+                  <option value="選択なし">選択なし</option>
+                  <option value="女">女</option>
+                  <option value="男">男</option>
+                </select>
+                <br>
+                <br>
+                <label>お知らせ：</label>
+                <select name="info" id="input-info">
+                  <option value="選択なし">選択なし</option>
+                  <option value="受け取らない">受け取らない</option>
+                  <option value="受け取る">受け取る</option>
+                </select>
+                <br>
+                <br>
+                <label>登録日時:</label><br>
+                <input type="datetime-local" name="signup-date-start" value="2021-05-13T15:15" id="input-signup-date-start">
+                <br>
+                <label>　～　</label>
+                <br>
+                <input type="datetime-local" name="signup-date-end" value="2021-05-13T15:15" id="input-signup-date-end">
+                <br>
+                <br>
+                <label>アンケート:</label><br>
+                <input id="input-route-a" type="checkbox" name="route" value="SNS" >
+                <label for="SNS">SNS</label>
+                <input id="input-route-a" type="checkbox" name="route" value="広告" >
+                <label for="広告">広告</label>
+                <input id="input-route-a" type="checkbox" name="route" value="雑誌" >
+                <label for="雑誌">雑誌</label>
+                <input id="input-route-a" type="checkbox" name="route" value="知人からの紹介" >
+                <label for="知人からの紹介">知人からの紹介</label>
+              <br>
+              <br>
+              <h5>
+               
+              <button onClick="AddKarte();">追加</button></h5>
+            </div>
+          </div>
+        </div>
+        
+      <label for="add-karte" class="open_btn">新規追加+</label>
+      </h5>
+      <br>
+      <br>
+
+
+      <!--表-->
+      <table>
+
+        <tr>
+          <th>ID</th> 
+          <th>氏名</th> 
+          <th>性別</th> 
+          <th>お知らせ</th> 
+          <th>登録日時</th>
+          <th>アンケート</th>
+        </tr>
+
+        <tr>
+          <td><a href="karte-details.html">000001</a></td> 
+          <td>相川　一郎</td>  
+          <td>男</td> 
+          <td>受け取る</td>
+          <td>2021-05-13T15:15</td>
+          <td>SNS</td>
+        </tr>
+        
+        <tr>
+          <td><a href="karte-details.html">000002</a></td> 
+          <td>宇都宮　絵里</td>  
+          <td>女</td> 
+          <td>受け取る</td>
+          <td>2021-05-13T15:15</td>
+          <td>広告</td>
+        </tr>
+
+        <tr>
+          <td><a href="karte-details.html">000003</a></td> 
+          <td>小田　和美</td>  
+          <td>女</td> 
+          <td>受け取る</td>
+          <td>2021-05-13T15:15</td>
+          <td>SNS</td>
+        </tr>
+
+      </table>
+      <br>
+      <h5 style="padding:0px 0px 0px 300px">1/1</h5>
+      <h5 style="padding:0px 0px 0px 250px">3件</h5>
+
+
+  </main>
+
+  <footer></footer>
+
+      <!-- ↓JavaScriptの処理を追加 -->
+      <script type="text/javascript">
+        function checkKarteSearch(){
+          if (karte_form.id.value == ""){
+            //空の場合
+            alert("idを入力してください");    //エラーメッセージを出力
+            return false;    //ボタンの動作をキャンセル
+          }else{
+            //IDが入力されている場合
+            showSearchWord();   //入力した条件を画面に表示
+            return true; 
+          }
+        }
+        const showSearchWord = () => {
+          const textId = document.getElementById("input-id");
+          const inputId = textId.value;
+          const textName = document.getElementById("input-name");
+          const inputName = textName.value;
+          const textGender = document.getElementById("input-gender");
+          const inputGender = textGender.value;
+          const textInfo = document.getElementById("input-info");
+          const inputInfo = textInfo.value;
+          const textSignupDateStart = document.getElementById("input-signup-date-start");
+          const inputSignupDateStart = textSignupDateStart.value;
+          const textSignupDateEnd = document.getElementById("input-signup-date-end");
+          const inputSignupDateEnd = textSignupDateEnd.value;
+          const arr1 = [];
+          const textRoute = document.karte_form.route;
+
+          for (let i = 0; i < textRoute.length; i++) {
+            if (textRoute[i].checked) { 
+              arr1.push(textRoute[i].value);
+            }
+          }
+          document.getElementById("span1").textContent = "アンケート：" + arr1;
+
+
+          //テキストボックスの値を使って、出力するメッセージを生成する
+          const output = "検索条件<br>" + "ID：" + inputId + "　　氏名：" + inputName + "　　性別："  + inputGender  + "　　お知らせ："  + inputInfo + "<br>登録日時：" + inputSignupDateStart + "　～　" + inputSignupDateEnd +  "　　"  ;
+          //出力用のp要素にメッセージを表示
+          document.getElementById("output-message").innerHTML = output;
+          document.getElementById("karte-search").checked = false;
+
+        }
+
+        //新規追加は仮置きで閉じるだけの処理を用意
+        function AddKarte(){
+          document.getElementById("add-karte").checked = false;
+        }
+
+      </script>
+</html>

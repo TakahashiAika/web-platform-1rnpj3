@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../reset.css">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link rel="stylesheet" type="text/css" href="color.css">
+  </head>
+
+  <header>
+    
+    <h2>Ethicart</h2>
+    <h3>エンドユーザー：アカウント名</h3>
+    <h1 class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+          <nuv>
+            <menu-title>
+                <in-title>Ethicart</in-title>
+            </menu-title>
+            <ul>
+                <li>
+                    <li><a href="../user-change.html">ユーザー切替</a></li>
+                </li>
+                <li>
+                    <li><a href="info.html">TOP</a></li>
+                </li>
+                <li>
+                    <li><a href="cart.html">カート</a></li>
+                </li>
+                <li>
+                    <li><a href="menu.html">メニュー</a></li>
+                </li>
+                <li>
+                    <li><a href="order.html">予約・購入履歴</a></li>
+                </li>
+                <li>
+                    <li><a href="info.html">お知らせ</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-set.html">顧客情報</a></li>
+                </li>
+            </ul>
+          </nuv>
+        </div>
+        <!--ここまでメニュー-->
+    </h1>
+    
+  </header>
+
+
+  <main>
+    <!--ぱんくず-->
+    <div class="cp_breadcrumb">
+    <ul class="breadcrumbs">
+    <li><a href="info.html">TOP</a></li>
+    <li><a href="order.html">予約・購入履歴</a></li>
+    <li>オーダー詳細</li>
+    </ul>
+    </div>
+
+    <h4>オーダー詳細</h4><br><br>
+    <label>注文番号：A00001-20200501-00001</label><br><br>
+    <label>メニュー/オプション:</label><br>
+    <label><a href="menu-details.html">名称：--------</a></label>
+    <br>
+    <br>
+    <label>金額：12,345円</label>
+    <br>
+    <br>
+    <label>支払い方法：クレジット</label>
+    <br>
+    <br>
+    <label>支払い：済</label>
+    <br>
+    <br>
+      <label>注文日:</label><br>
+    <label>2021/03/04 19:10</label>
+    <br>
+    <br>
+      <label>開始日時:</label><br>
+    <label>2021/06/14 13:00</label><br><br>
+    <label>担当スタッフ/備品一覧:</label><br>
+    <label>スタッフ名</label><br>
+    <label>部屋名</label><br>
+    <label>設備名</label><br><br>
+    <label>連絡事項:</label><br>
+    <input style="width: 300px;height: 50px;" type="text" name="menu-title" value=""><br><br>
+    <br>
+    <br>
+    <p  style="color: var(--main-on-color)" id="output-message"></p>
+    <br>
+    <h5><button onClick="ChangeOrder();">編集</button>
+    <br>
+    <br>
+    <button onclick="history.back()">戻る</button></h5>
+  </main>
+
+
+
+  <footer></footer>
+
+  <!-- ↓JavaScriptの処理を追加 -->
+  <script type="text/javascript">
+
+    //編集は仮置きでメッセージを表示するだけの処理を用意
+    function ChangeOrder(){
+      showChangeMessage();
+    }
+    const showChangeMessage = () => {
+      const output = "編集完了";
+      document.getElementById("output-message").innerHTML = output;
+    }
+  </script>
+
+</html>

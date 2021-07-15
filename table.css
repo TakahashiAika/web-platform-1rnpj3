@@ -1,0 +1,17 @@
+table th,td{
+  border:solid 1px #aaaaaa;
+}
+table th{
+  padding : 10px 10px;
+  background-color: var(--main-fg-color);
+  color: var(--text-color-two);
+}
+
+table td{
+  padding : 10px 10px;
+  background-color: var(--main-bg-color);
+}
+
+h5{
+  display: inline-block;
+}

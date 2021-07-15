@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="table.css">
+    <link rel="stylesheet" type="text/css" href="popup.css">
+  </head>
+  <header>
+    
+    <h2>Ethicart</h2>
+    <h3>本部：アカウント名</h3>
+    <h1 class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+          <nuv>
+            <menu-title>
+                <in-title>Ethicart</in-title>
+            </menu-title>
+            <ul>
+                <li>
+                    <li><a href="user-change.html">ユーザー切替</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">TOP</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">オーダー検索</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-list.html">顧客情報検索</a></li>
+                </li>
+                <li>
+                    <li><a href="menu.html">メニュー設定</a></li>
+                </li>
+                <li>
+                    <li><a href="schedule.html">スケジュール確認</a></li>
+                </li>
+                <li>
+                    <li><a href="info-set.html">お知らせ設定</a></li>
+                </li>
+                <li>
+                    <li><a href="log-view.html">システムログ確認</a></li>
+                </li>
+                <li>
+                    <li><a href="account.html">アカウント設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office.html">店舗設定</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-set.html">顧客情報項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="menu-set.html">メニュー項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="staff-set.html">スタッフ項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office-set.html">店舗項目設定</a></li>
+                </li>
+            </ul>
+          </nuv>
+        </div>
+        <!--ここまでメニュー-->
+    </h1>
+
+
+  </header>
+
+
+  <menu></menu>
+  <main>
+    <div class="cp_breadcrumb">
+    <ul class="breadcrumbs">
+    <li><a href="top.html">TOP</a></li>
+    <li>店舗設定</li>
+    </ul>
+    </div>
+
+
+      <h4>店舗設定</h4>
+      <br>
+      <br>
+      <!--簡易検索-->
+      <p>
+        <input id="radio-a" type="radio" name="search" value="済" checked><label for="radio-a">状態：有効</label>
+        <input id="radio-b" type="radio" name="search" value="未"><label for="radio-b">状態：無効</label><br>
+      </p>
+      <br>
+
+      <p  style="color: var(--main-on-color)" id="output-message"></p>
+
+      <br>
+      <!--詳細条件検索-->
+      <h5>
+        <div class="popup_wrap">
+          <input style="display: none" id="search-account" type="checkbox">
+          <div class="popup_overlay">
+            <label for="search-account" class="popup_trigger"></label>
+            <div class="popup_content">
+              <label for="search-account" class="close_btn">×</label>
+              <form action="" method="get" name="account_form">
+                <label>id:</label><br>
+                <input type="number" name="id" value="000000" id="input-id">
+                <br>
+                <br>
+                <label>店舗名:</label><br>
+                <input type="text" name="menu-title" value="abc" id="input-name">
+                <br>
+                <br>
+                <label>住所:</label><br>
+                <input type="text" name="menu-title" value="abc" id="input-name">
+                <br>
+                <br>
+                <label>登録日時:</label><br>
+                <input type="datetime-local" name="account-date-start" value="2021-05-13T15:15" id="input-account-date-start">
+                <br>
+                <label>　～　</label>
+                <br>
+                <input type="datetime-local" name="account-date-end" value="2021-05-13T15:15" id="input-account-date-end">
+                <br>
+              <br>
+              <h5>
+              <p id="output-message"></p>
+              <button onClick="return check();" onClick="show();" >確定</button>
+              </h5>
+            </div>
+          </div>
+        </div>
+      <label for="search-account" class="open_btn">詳細条件検索</label>
+      </h5>
+      <!--新規追加-->
+      <h5 style="padding:0px 0px 0px 20px">
+        <div class="popup_wrap">
+          <input style="display: none" id="add-account" type="checkbox">
+          <div class="popup_overlay">
+            <label for="add-account" class="popup_trigger"></label>
+            <div class="popup_content">
+              <label for="add-account" class="close_btn">×</label>
+              <form action="" method="get" name="account_form">
+                <label>id:</label><br>
+                <input type="number" name="id" value="000000" id="input-id">
+                <br>
+                <br>
+                <label>店舗名:</label><br>
+                <input type="text" name="menu-title" value="abc" id="input-name">
+                <br>
+                <br>
+                <label>住所:</label><br>
+                <input type="text" name="menu-title" value="abc" id="input-name">
+                <br>
+                <br>
+                <label>登録日時:</label><br>
+                <input type="datetime-local" name="account-date-start" value="2021-05-13T15:15" id="input-account-date-start">
+                <br>
+              <br>
+              <br>
+              <h5>
+               
+              <button onClick="AddAccount();">追加</button></h5>
+            </div>
+          </div>
+        </div>
+        
+      <label for="add-account" class="open_btn">新規追加+</label>
+      </h5>
+      <br>
+      <br>
+
+
+      <!--表-->
+      <table style="width: 800px">
+
+        <tr>
+          <th>ID</th> 
+          <th>店舗名</th> 
+          <th>住所</th> 
+          <th>登録日時</th>
+          <th>状態</th>
+        </tr>
+
+        <tr>
+          <td><a href="office-details.html">000001</a></td> 
+          <td>FC加盟店A</td>
+          <td>000-0000 東京都千代田区1-1</td>
+          <td>2021-05-13T15:15</td>
+          <td>有効</td>
+        </tr>
+
+        <tr>
+          <td><a href="office-details.html">000002</a></td> 
+          <td>FC加盟店B</td>
+          <td>000-0000 東京都千代田区1-1</td>
+          <td>2021-05-13T15:15</td>
+          <td>有効</td>
+        </tr>
+
+        <tr>
+          <td><a href="office-details.html">000003</a></td> 
+          <td>FC加盟店C</td>
+          <td>000-0000 東京都千代田区1-1</td>
+          <td>2021-05-13T15:15</td>
+          <td>無効</td>
+        </tr>
+
+      </table>
+      <br>
+      <h5 style="padding:0px 0px 0px 380px">1/1</h5>
+      <h5 style="padding:0px 0px 0px 360px">3件</h5>
+
+
+  </main>
+
+  <!-- ↓JavaScriptの処理を追加 -->
+  <script type="text/javascript">
+    function check(){
+      if (account_form.id.value == ""){
+        //空の場合
+        alert("idを入力してください");    //エラーメッセージを出力
+        return false;    //ボタンの動作をキャンセル
+      }else{
+        //IDが入力されている場合
+        show();   //入力した条件を画面に表示
+        return true; 
+      }
+    }
+    const show = () => {
+      const textId = document.getElementById("input-id");
+      const inputId = textId.value;
+      const textName = document.getElementById("input-name");
+      const inputName = textName.value;
+      const textType = document.getElementById("input-type");
+      const inputType = textType.value;
+      const textAccountDateStart = document.getElementById("input-account-date-start");
+      const inputAccountDateStart = textAccountDateStart.value;
+      const textAccountDateEnd = document.getElementById("input-account-date-end");
+      const inputAccountDateEnd = textAccountDateEnd.value;
+      const textInvalide = document.getElementById("input-invalid");
+      const inputInvalide = textInvalide.value;
+
+
+      //テキストボックスの値を使って、出力するメッセージを生成する
+      const output = "検索条件<br>" + "ID：" + inputId + "　　アカウント名：" + inputName + "　　権限："  + inputType + "<br>登録日時：" + inputAccountDateStart + "　～　" + inputAccountDateEnd + "<br>状態：" + inputInvalide;
+      //出力用のp要素にメッセージを表示
+      document.getElementById("output-message").innerHTML = output;
+      document.getElementById("search-account").checked = false;
+
+    }
+
+    //新規追加は仮置きで閉じるだけの処理を用意
+    function AddAccount(){
+      document.getElementById("add-account").checked = false;
+    }
+  </script>
+</html>

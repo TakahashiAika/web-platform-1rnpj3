@@ -1,0 +1,398 @@
+.box {
+  display: flex;
+    width: 100%;
+    height: 110px;
+}
+
+
+/*メニュー表示用のボックス*/
+.cart_box {
+    display: flex;
+    justify-content: start;
+    align-items: left;
+    padding: 1em 1.5em;
+    margin: 0.3em 0;
+    background-color: var(--main-bg-color);
+    border:1px solid var(--line-color);/*枠線*/
+    box-shadow: 0 2px 6px rgba(184, 184, 184, 0.3);/*影*/
+    color: var(--text-color-one);/*文字色*/
+    width: 70%;
+    height: 70px;
+}
+.flex>p{
+    width: 40%;
+}
+.flex>h4{
+    width: 40%;
+}
+.cart_box .Link{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.cart_box p {
+    display: inline;
+    vertical-align : top;
+    align-items: left;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.cart_box h4 {
+    display: inline;
+    vertical-align : top;
+    align-items: left;
+}
+.cart_box img{
+  margin:0 5px 5px 0px;
+  vertical-align : center;
+  width:110px;
+  height:70px;
+}
+.cart_box:close_btn {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.cart_box:hover{
+  opacity: 0.8;
+}
+.price {
+    position: flex;
+    justify-content: flex-end;
+    vertical-align : bottom;
+    align-items: right;
+    width: 100%;
+    height: 30px;
+    margin-left: 70%;
+}
+.flex>h5{
+    width: 40%;
+}
+.cart_box tag1{
+    font-weight: normal;
+    background-color:#44bda9;/*背景色*/
+    border:none;/*枠線*/
+    color: var(--text-color-two);/*文字色*/
+    font-size: 13px;
+    line-height: 1.8;
+    margin:1px 1px 3px 3px;
+    padding: 0px 3px;
+}
+.cart_box tag2{
+    font-weight: normal;
+    background-color:#7665d3;/*背景色*/
+    border:none;/*枠線*/
+    color: var(--text-color-two);/*文字色*/
+    font-size: 13px;
+    line-height: 1.8;
+    margin:1px 1px 3px 3px;
+    padding: 0px 3px;
+}
+
+main{
+  z-index: 3;
+  position: relative;
+  top: 100px;
+  background-color: var(--main-bg-color);
+  width: 80%;
+  text-align: left;
+  padding: 26px 40px ;
+}
+
+main li{
+  display: inline-block;
+}
+
+h6 {
+  position: relative;
+  display: inline-block;
+  left:60px;
+  padding: 20px 0px;
+  color: var(--main-fg-color);
+  font-size: x-large;
+  list-style: none;
+  border:0;
+  outline:0;
+  line-height: 0px;
+}
+header2{
+  z-index: 4;
+  position: fixed;
+  top: 60px;
+  background-color: var(--main-bg-color);
+  width: 80%;
+  text-align: left;
+  padding: 26px 40px ;
+}
+
+footer{
+  z-index: 4;
+  position: fixed;
+  bottom: 20px;
+  background-color: var(--main-bg-color);
+  width: 80%;
+  text-align: left;
+  height: 60px;
+}
+
+/* --- トグルボタン式のチェックボックス --- */
+.ItemBox{
+position: absolute;
+margin-bottom: 3px;
+top: 5px;
+left: 200px;
+}
+.ItemBox-CheckBox{
+margin-top: 10px;
+display: flex;
+align-items: center;
+}
+.ItemBox-CheckBox-Title{
+font-size: 14px;
+}
+.ItemBox-CheckBox-Input{
+display: none;
+}
+.ItemBox-CheckBox-Label{
+position: relative;
+margin-left: auto;
+width: 56px;
+height: 24px;
+border-radius: 80px;
+background: #d0d2d9; 
+cursor: pointer;
+transition: .2s ease;
+}
+.ItemBox-CheckBox-Input:checked + .ItemBox-CheckBox-Label{
+background: var(--main-fg-color); 
+}
+.ItemBox-CheckBox-Label:before{
+content: '';
+position: absolute;
+top: 2px;
+left: 2px;
+border-radius: 80px;
+width: 20px;
+height: 20px;
+background: #fff;
+transition: .2s ease; 
+}
+.ItemBox-CheckBox-Input:checked + .ItemBox-CheckBox-Label:before{
+left: 33px;
+}
+/*ボックス2*/
+.cart_box2 {
+    display: flex;
+    justify-content: start;
+    align-items: left;
+    padding: 1em 1.5em;
+    margin: 0.3em 0.3em;
+    background-color: var(--main-bg-color);
+    border:1px solid var(--line-color);/*枠線*/
+    box-shadow: 0 2px 6px rgba(184, 184, 184, 0.3);/*影*/
+    color: var(--text-color-one);/*文字色*/
+    width: 5%;
+    height: 70px;
+}
+
+.cart_box2 .Link{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cart_box2 li {
+    display: inline-block;
+    vertical-align : top;
+    align-items: center;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 2;
+}
+.cart_box2 h4 {
+    display: inline;
+    vertical-align : top;
+    align-items: center;
+}
+.cart_box2:hover{
+  opacity: 0.8;
+}
+
+/*ボックス3*/
+.cart_box3 {
+    display: flex;
+    justify-content: start;
+    align-items: left;
+    padding: 1em 1.5em;
+    margin: 0.3em 0.3em 0.3em 0;
+    background-color: var(--main-bg-color);
+    border:1px solid var(--line-color);/*枠線*/
+    box-shadow: 0 2px 6px rgba(184, 184, 184, 0.3);/*影*/
+    color: var(--text-color-one);/*文字色*/
+    width: 25%;
+    height: 70px;
+}
+
+.cart_box3 .Link{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cart_box3 li {
+    display: inline-block;
+    vertical-align : top;
+    align-items: center;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 2;
+}
+.cart_box3 h4 {
+    display: inline;
+    vertical-align : top;
+    align-items: center;
+}
+.cart_box3:hover{
+  opacity: 0.8;
+}
+
+/*ボックス４　オプション1*/
+.cart_box_option {
+    display: flex;
+    justify-content: start;
+    align-items: left;
+    padding: 1em 1.5em;
+    margin: 0.3em 0.3em 0.3em .3em;
+    background-color: var(--main-bg-color);
+    border:1px solid var(--line-color);/*枠線*/
+    box-shadow: 0 2px 6px rgba(184, 184, 184, 0.3);/*影*/
+    color: var(--text-color-one);/*文字色*/
+    width: 55%;
+    height: 20px;
+}
+
+.cart_box_option .Link{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cart_box_option li {
+    display: inline-block;
+    vertical-align : top;
+    align-items: center;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 2;
+}
+.cart_box_option h4 {
+    display: inline;
+    vertical-align : top;
+    align-items: center;
+}
+.cart_box_option:hover{
+  opacity: 0.8;
+}
+
+/*ボックス５*/
+.cart_box5 {
+    display: flex;
+    justify-content: start;
+    align-items: left;
+    padding: 1em 1.5em;
+    margin: 0.3em 0.3em 0.3em 0;
+    background-color: var(--main-bg-color);
+    border:1px solid var(--line-color);/*枠線*/
+    box-shadow: 0 2px 6px rgba(184, 184, 184, 0.3);/*影*/
+    color: var(--text-color-one);/*文字色*/
+    width: 5%;
+    height: 20px;
+}
+
+.cart_box5 .Link{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cart_box5 li {
+    display: inline-block;
+    vertical-align : top;
+    align-items: center;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 2;
+}
+.cart_box5 h4 {
+    display: inline;
+    vertical-align : top;
+    align-items: center;
+}
+.cart_box5:hover{
+  opacity: 0.8;
+}
+
+/*ボックス6*/
+.cart_box6 {
+    display: flex;
+    justify-content: start;
+    align-items: left;
+    padding: 1em 1.5em;
+    margin: 0.3em 0.3em 0.3em 0;
+    background-color: var(--main-bg-color);
+    border:1px solid var(--line-color);/*枠線*/
+    box-shadow: 0 2px 6px rgba(184, 184, 184, 0.3);/*影*/
+    color: var(--text-color-one);/*文字色*/
+    width: 25%;
+    height: 20px;
+}
+
+.cart_box6 .Link{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cart_box6 li {
+    display: inline-block;
+    vertical-align : top;
+    align-items: center;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 2;
+}
+.cart_box6 h4 {
+    display: inline;
+    vertical-align : top;
+    align-items: center;
+}
+.cart_box6:hover{
+  opacity: 0.8;
+}
+
+/*オプション用の大きい枠*/
+.option_box {
+    display: flex;
+    justify-content: start;
+    align-items: left;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 60px;
+}
+/*ボックス8*/
+.cart_box8 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    padding: 0;
+    margin: 0;
+    width: 15%;
+    height: 20px;
+}

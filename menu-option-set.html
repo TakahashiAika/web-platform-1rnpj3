@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="table.css">
+    <link rel="stylesheet" type="text/css" href="popup.css">
+  </head>
+  <header>
+    
+    <h2>Ethicart</h2>
+    <h3>本部：アカウント名</h3>
+    <h1 class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+          <nuv>
+            <menu-title>
+                <in-title>Ethicart</in-title>
+            </menu-title>
+            <ul>
+                <li>
+                    <li><a href="user-change.html">ユーザー切替</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">TOP</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">オーダー検索</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-list.html">顧客情報検索</a></li>
+                </li>
+                <li>
+                    <li><a href="menu.html">メニュー設定</a></li>
+                </li>
+                <li>
+                    <li><a href="schedule.html">スケジュール確認</a></li>
+                </li>
+                <li>
+                    <li><a href="info-set.html">お知らせ設定</a></li>
+                </li>
+                <li>
+                    <li><a href="log-view.html">システムログ確認</a></li>
+                </li>
+                <li>
+                    <li><a href="account.html">アカウント設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office.html">店舗設定</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-set.html">顧客情報項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="menu-set.html">メニュー項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="staff-set.html">スタッフ項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office-set.html">店舗項目設定</a></li>
+                </li>
+            </ul>
+          </nuv>
+        </div>
+        <!--ここまでメニュー-->
+    </h1>
+
+
+  </header>
+  <menu></menu>
+  <main>
+    <!--ぱんくず-->
+    <div class="cp_breadcrumb">
+    <ul class="breadcrumbs">
+    <li><a href="top.html">TOP</a></li>
+    <li><a href="menu-set.html">メニュー項目設定</a></li>
+    <li>メニューオプション項目設定</li>
+    </ul>
+    </div>
+
+    <h4>メニューオプション項目設定</h4>
+    <br>
+    <br>
+    <!--簡易検索-->
+    <p>
+      <input id="radio-a" type="radio" name="search" value="済" checked><label for="radio-a">状態：有効</label>
+      <input id="radio-b" type="radio" name="search" value="未"><label for="radio-b">状態：無効</label><br>
+    </p>
+    <br>
+
+    <p  style="color: var(--main-on-color)" id="output-message"></p>
+
+    <br>
+    <!--詳細条件検索-->
+    <h5>
+      <div class="popup_wrap">
+        <input style="display: none" id="search-karte-set" type="checkbox">
+        <div class="popup_overlay">
+          <label for="search-karte-set" class="popup_trigger"></label>
+          <div class="popup_content">
+            <label for="search-karte-set" class="close_btn">×</label>
+            <form action="" method="get" name="karte_set_form">
+              <label>id:</label><br>
+              <input type="number" name="id" value="000000" id="input-id"><br><br>
+              <label>タイトル:</label><br>
+              <input type="text" name="karte-set-title" value="abc" id="input-title">
+              <br>
+              <br>
+              <label>状態：</label>
+              <select name="pull-down" id="input-invalid">
+                <option value="未設定">未設定</option>
+                <option value="有効">有効</option>
+                <option value="無効">無効</option>
+              </select>
+              <br><br>
+              <label>位置:</label><br>
+              <input type="number" name="position" value="000000" id="input-positions">
+              <br>
+              <br>
+              <label>項目分類：</label>
+              <select name="pull-down" id="input-type">
+                <option value="テキスト">テキスト</option>
+                <option value="選択">選択</option>
+                <option value="チェック">チェック</option>
+                <option value="ラベル">ラベル</option>
+              </select>
+              <br>
+              <br>
+              <label>分類オプション:</label><br>
+              <input type="text" name="karte-option" value="abc" id="input-option">
+              <br>
+              <br>
+              <label>必須：</label>
+              <select name="pull-down" id="input-required">
+                <option value="-">-</option>
+                <option value="○">○</option>
+              </select>
+              <br>
+              <br>
+            </form>
+            <br>
+            <h5>
+            <p id="output-message"></p>
+            <button onClick="return check();" onClick="show();" >確定</button>
+            </h5>
+          </div>
+        </div>
+      </div>
+    <label for="search-karte-set" class="open_btn">詳細条件検索</label>
+    </h5>
+
+
+    <!--新規追加-->
+    <h5 style="padding:0px 0px 0px 20px">
+      <div class="popup_wrap">
+        <input style="display: none" id="add-karte-set" type="checkbox">
+        <div class="popup_overlay">
+          <label for="add-karte-set" class="popup_trigger"></label>
+          <div class="popup_content">
+            <label for="add-karte-set" class="close_btn">×</label>
+              <label>id:</label><br>
+              <input type="number" name="id" value="000000" id="input-id"><br><br>
+              <label>タイトル:</label><br>
+              <input type="text" name="karte-set-title" value="abc" id="input-title">
+              <br>
+              <br>
+              <label>状態：</label>
+              <select name="pull-down" id="input-invalid">
+                <option value="未設定">未設定</option>
+                <option value="有効">有効</option>
+                <option value="無効">無効</option>
+              </select>
+              <br><br>
+              <label>位置:</label><br>
+              <input type="number" name="position" value="000000" id="input-position">
+              <br>
+              <br>
+              <label>項目分類：</label>
+              <select name="pull-down" id="input-type">
+                <option value="テキスト">テキスト</option>
+                <option value="選択">選択</option>
+                <option value="チェック">チェック</option>
+                <option value="ラベル">ラベル</option>
+              </select>
+              <br>
+              <br>
+              <label>分類オプション:</label><br>
+              <input type="text" name="karte-option" value="abc" id="input-option">
+              <br>
+              <br>
+              <label>必須：</label>
+              <select name="pull-down" id="input-required">
+                <option value="-">-</option>
+                <option value="○">○</option>
+              </select>
+              <br>
+              <br>
+            <br>
+            <br>
+            <h5>
+            <button onClick="AddKarteSet();">追加</button></h5>
+          </div>
+        </div>
+      </div>
+    <label for="add-karte-set" class="open_btn">新規追加+</label>
+    </h5>
+    <br>
+    <br>
+
+
+    <!--表-->
+    <table style="width: 620px">
+      <tr>
+        <th>ID</th> 
+        <th>タイトル</th> 
+        <th>状態</th> 
+        <th>位置</th>
+        <th>項目分類</th>
+        <th>分類オプション</th>
+        <th>必須</th>
+      </tr>
+
+      <tr>
+        <td><a href="menu-option-set-details.html">000001</a></td> 
+        <td>メニュー名</td> 
+        <td>有効</td>
+        <td>1</td>
+        <td>テキスト</td>
+        <td>-</td>
+        <td>○</td>
+      </tr>
+
+      <tr>
+        <td><a href="menu-option-set-details.html">000002</a></td> 
+        <td>分類</td> 
+        <td>有効</td>
+        <td>2</td>
+        <td>選択</td>
+        <td>2,施術,商品</td>
+        <td>○</td>
+      </tr>
+
+      <tr>
+        <td><a href="menu-option-set-details.html">000003</a></td> 
+        <td>時間</td> 
+        <td>有効</td>
+        <td>3</td>
+        <td>テキスト</td>
+        <td>時間</td>
+        <td>○</td>
+      </tr>
+
+    </table>
+    <br>
+    <h5 style="padding:0px 0px 0px 300px">1/1</h5>
+    <h5 style="padding:0px 0px 0px 250px">3件</h5>
+  </main>
+
+  <footer></footer>
+
+      <!-- ↓JavaScriptの処理を追加 -->
+      <script type="text/javascript">
+        function check(){
+          if (karte_set_form.id.value == ""){
+            //空の場合
+            alert("idを入力してください");    //エラーメッセージを出力
+            return false;    //ボタンの動作をキャンセル
+          }else{
+            //IDが入力されている場合
+            show();   //入力した条件を画面に表示
+            return true; 
+          }
+        }
+        const show = () => {
+          const textId = document.getElementById("input-id");
+          const inputId = textId.value;
+
+          //テキストボックスの値を使って、出力するメッセージを生成する
+          const output = "検索条件<br>" + "ID：" + inputId;
+          //出力用のp要素にメッセージを表示
+          document.getElementById("output-message").innerHTML = output;
+          document.getElementById("search-karte-set").checked = false;
+
+        }
+
+        //新規追加は仮置きで閉じるだけの処理を用意
+        function AddKarteSet(){
+          document.getElementById("add-karte-set").checked = false;
+        }
+      </script>
+</html>

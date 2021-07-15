@@ -1,0 +1,209 @@
+/*メニュー表示用のボックス*/
+.menu_box {
+    display: flex;
+    justify-content: start;
+    align-items: left;
+    padding: 1em 1.5em;
+    margin: 0.3em 0;
+    background-color: var(--main-bg-color);
+    border:1px solid var(--line-color);/*枠線*/
+    box-shadow: 0 2px 6px rgba(184, 184, 184, 0.3);/*影*/
+    color: var(--text-color-one);/*文字色*/
+    width: 730px;
+    height: 140px;
+}
+.flex>p{
+    width: 40%;
+}
+.flex>h4{
+    width: 40%;
+}
+.menu_box .Link{
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: 110;
+    left: 0;
+    width: 830px;
+    height: 210px;
+}
+.menu_box .Link2{
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: 310;
+    left: 0;
+    width: 830px;
+    height: 210px;
+}
+.menu_box .Link3{
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: 530;
+    left: 0;
+    width: 830px;
+    height: 210px;
+}
+.menu_box .Link4{
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: 620;
+    left: 0;
+    width: 830px;
+    height: 210px;
+}
+.menu_box p {
+    display: inline;
+    vertical-align : top;
+    align-items: left;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.menu_box h4 {
+    display: inline;
+    vertical-align : top;
+    align-items: left;
+}
+.menu_box img{
+  margin:0 5px 5px 0px;
+  vertical-align : center;
+}
+.menu_box:close_btn {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.menu_box:hover{
+  opacity: 0.8;
+}
+.price {
+    position: flex;
+    justify-content: flex-end;
+    vertical-align : bottom;
+    align-items: right;
+    width: 500px;
+    height: 30px;
+    margin-left: 85%;
+}
+.flex>h5{
+    width: 40%;
+}
+.menu_box tag1{
+    font-weight: normal;
+    background-color:#44bda9;/*背景色*/
+    border:none;/*枠線*/
+    color: var(--text-color-two);/*文字色*/
+    font-size: 13px;
+    line-height: 1.8;
+    margin:1px 1px 3px 3px;
+    padding: 0px 3px;
+}
+.menu_box tag2{
+    font-weight: normal;
+    background-color:#7665d3;/*背景色*/
+    border:none;/*枠線*/
+    color: var(--text-color-two);/*文字色*/
+    font-size: 13px;
+    line-height: 1.8;
+    margin:1px 1px 3px 3px;
+    padding: 0px 3px;
+}
+.menu_box tag3{
+    font-weight: normal;
+    background-color:#d3656b;/*背景色*/
+    border:none;/*枠線*/
+    color: var(--text-color-two);/*文字色*/
+    font-size: 13px;
+    line-height: 1.8;
+    margin:1px 1px 3px 3px;
+    padding: 0px 3px;
+}
+.menu_box tag4{
+    font-weight: normal;
+    background-color:#ffcb6a;/*背景色*/
+    border:none;/*枠線*/
+    color: var(--text-color-two);/*文字色*/
+    font-size: 13px;
+    line-height: 1.8;
+    margin:1px 1px 3px 3px;
+    padding: 0px 3px;
+}
+main{
+  z-index: 3;
+  position: relative;
+  top: 100px;
+  background-color: var(--main-bg-color);
+  width: 80%;
+  text-align: left;
+  padding: 26px 40px ;
+}
+header2{
+  z-index: 4;
+  position: fixed;
+  top: 60px;
+  background-color: var(--main-bg-color);
+  width: 80%;
+  text-align: left;
+  padding: 26px 40px ;
+}
+
+footer{
+  z-index: 4;
+  position: fixed;
+  bottom: 0px;
+  background-color: var(--main-bg-color);
+  width: 80%;
+  text-align: left;
+  height: 60px;
+}
+
+/* --- トグルボタン式のチェックボックス --- */
+.ItemBox{
+position: absolute;
+margin-bottom: 3px;
+top: 5px;
+left: 200px;
+}
+.ItemBox-CheckBox{
+margin-top: 10px;
+display: flex;
+align-items: center;
+}
+.ItemBox-CheckBox-Title{
+font-size: 14px;
+}
+.ItemBox-CheckBox-Input{
+display: none;
+}
+.ItemBox-CheckBox-Label{
+position: relative;
+margin-left: auto;
+width: 56px;
+height: 24px;
+border-radius: 80px;
+background: #d0d2d9; 
+cursor: pointer;
+transition: .2s ease;
+}
+.ItemBox-CheckBox-Input:checked + .ItemBox-CheckBox-Label{
+background: var(--main-fg-color); 
+}
+.ItemBox-CheckBox-Label:before{
+content: '';
+position: absolute;
+top: 2px;
+left: 2px;
+border-radius: 80px;
+width: 20px;
+height: 20px;
+background: #fff;
+transition: .2s ease; 
+}
+.ItemBox-CheckBox-Input:checked + .ItemBox-CheckBox-Label:before{
+left: 33px;
+}

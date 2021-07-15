@@ -1,0 +1,85 @@
+.schedule_table {
+  border-collapse: collapse;
+  border-left: 1px solid var(--line-color);
+  border-top: 1px solid var(--line-color);
+  line-height: 1.5;
+  text-align: left;
+  width: 600;
+}
+.schedule_table th {
+  background-color: #E3E7E9;
+  border-bottom: 1px solid var(--line-color);
+  border-right: 1px solid var(--line-color);
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 10px;
+  text-align: center;
+  vertical-align : middle;
+}
+.schedule_table thead th {
+  background-color: var(--main-fg-color);
+  border-right: 1px solid var(--main-bg-color);
+  color: var(--main-bg-color);
+}
+.schedule_table thead th:last-child {
+  border-right: 1px solid var(--line-color);
+}
+.schedule_table td {
+  border-bottom: 1px solid var(--line-color);
+  border-right: 1px solid var(--line-color);
+  font-size: 13px;
+  padding: 10px;
+  vertical-align: top;
+  text-align: center;
+}
+h4 {
+  display: inline-block;
+}
+p {
+  display: inline-block;
+}
+footer{
+  position: fixed;
+  z-index: 5;
+  bottom: 0px;
+  background-color: var(--main-bg-color);
+  width: 100%;
+  text-align: left;
+  padding: 0px 0px  0px 40px ;
+}
+
+/*ボタン*/
+.entry_btn,
+.next_btn,
+.prev_btn {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 20px;
+  margin:0px;
+  padding: 4px 4px;
+  color: var(--text-color-two);
+  font-size: small;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: var(--main-fg-color);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all  0.3s ease;
+
+}
+.entry_btn:hover,
+.next_btn:hover,
+.prev_btn:hover{
+    background:var(--main-on-color);
+    color:#fff;
+    transition: .3s ease;
+}

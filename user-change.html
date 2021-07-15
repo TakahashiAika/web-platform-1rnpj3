@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="table.css">
+    <link rel="stylesheet" type="text/css" href="popup.css">
+  </head>
+  <header>
+    
+    <h2>Ethicart</h2>
+    <h3>本部：アカウント名</h3>
+    <h1 class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+          <nuv>
+            <menu-title>
+                <in-title>Ethicart</in-title>
+            </menu-title>
+            <ul>
+                <li>
+                    <li><a href="user-change.html">ユーザー切替</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">TOP</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">オーダー検索</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-list.html">顧客情報検索</a></li>
+                </li>
+                <li>
+                    <li><a href="menu.html">メニュー設定</a></li>
+                </li>
+                <li>
+                    <li><a href="schedule.html">スケジュール確認</a></li>
+                </li>
+                <li>
+                    <li><a href="info-set.html">お知らせ設定</a></li>
+                </li>
+                <li>
+                    <li><a href="log-view.html">システムログ確認</a></li>
+                </li>
+                <li>
+                    <li><a href="account.html">アカウント設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office.html">店舗設定</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-set.html">顧客情報項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="menu-set.html">メニュー項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="staff-set.html">スタッフ項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office-set.html">店舗項目設定</a></li>
+                </li>
+            </ul>
+          </nuv>
+        </div>
+        <!--ここまでメニュー-->
+    </h1>
+
+
+  </header>
+
+  <menu></menu>
+  <main>
+
+    <!--ぱんくず-->
+    <div class="cp_breadcrumb">
+    <ul class="breadcrumbs">
+    <li><a href="#">TOP</a></li>
+    <li>ユーザー切替</li>
+    </ul>
+    </div>
+
+      <h4>ユーザー切替</h4>
+      <br>
+      <br>
+      <label onclick="location.href='./top.html'" style="left: 40px"  class="open_btn">FC本部</label>
+      <br>
+      <br>
+      <label onclick="location.href='./store/info.html'" style="left: 40px;background-color: var(--store-fg-color)"  class="open_btn">FC加盟店</label>
+      <br>
+      <br>
+      <label onclick="location.href='./customer/info.html'" style="left: 40px;background-color:var(--customer-fg-color)"  class="open_btn">エンドユーザー</label>
+
+
+  </main>
+
+</html>

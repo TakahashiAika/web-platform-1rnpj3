@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="table.css">
+    <link rel="stylesheet" type="text/css" href="popup.css">
+  </head>
+  <header>
+    
+    <h2>Ethicart</h2>
+    <h3>本部：アカウント名</h3>
+    <h1 class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+          <nuv>
+            <menu-title>
+                <in-title>Ethicart</in-title>
+            </menu-title>
+            <ul>
+                <li>
+                    <li><a href="user-change.html">ユーザー切替</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">TOP</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">オーダー検索</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-list.html">顧客情報検索</a></li>
+                </li>
+                <li>
+                    <li><a href="menu.html">メニュー設定</a></li>
+                </li>
+                <li>
+                    <li><a href="schedule.html">スケジュール確認</a></li>
+                </li>
+                <li>
+                    <li><a href="info-set.html">お知らせ設定</a></li>
+                </li>
+                <li>
+                    <li><a href="log-view.html">システムログ確認</a></li>
+                </li>
+                <li>
+                    <li><a href="account.html">アカウント設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office.html">店舗設定</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-set.html">顧客情報項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="menu-set.html">メニュー項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="staff-set.html">スタッフ項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office-set.html">店舗項目設定</a></li>
+                </li>
+            </ul>
+          </nuv>
+        </div>
+        <!--ここまでメニュー-->
+    </h1>
+
+
+  </header>
+  <menu></menu>
+  <main>
+    <!--ぱんくず-->
+    <div class="cp_breadcrumb">
+    <ul class="breadcrumbs">
+    <li><a href="top.html">TOP</a></li>
+    <li><a href="schedule.html">スタッフ・備品一覧</a></li>
+    <li><a href="schedule-monthly.html">スケジュール表示</a></li>
+    <li>スケジュール詳細</li>
+    </ul>
+    </div>
+
+
+      <h4>スケジュール詳細</h4>
+      <br>
+      <br>
+      <!--簡易検索-->
+      <p>
+        <input id="radio-a" type="radio" name="search" value="済" checked><label for="radio-a">支払い：済</label>
+        <input id="radio-b" type="radio" name="search" value="未"><label for="radio-b">支払い：未</label><br>
+      </p>
+      <br>
+
+      <p style="color: var(--main-on-color)" id="output-message"></p>
+
+      <br>
+      <!--詳細条件検索-->
+      <h5>
+        <div class="popup_wrap">
+          <input style="display: none" id="trigger" type="checkbox">
+          <div class="popup_overlay">
+            <label for="trigger" class="popup_trigger"></label>
+            <div class="popup_content">
+              <label for="trigger" class="close_btn">×</label>
+              <form action="" method="get" name="order_form">
+                <label>id:</label><br>
+                <input type="number" name="id" value="000000" id="input-id"><br><br>
+                <label>メニュー名:</label><br>
+                <input type="text" name="menu-title" value="abc" id="input-menu">
+                <br>
+                <br>
+                <label>支払い：</label>
+                <select name="pull-down" id="input-price">
+                  <option value="済">済</option>
+                  <option value="未">未</option>
+                  <option value="エラー">エラー</option>
+                </select>
+                <br>
+                <br>
+                <label>注文日:</label><br>
+                <input type="datetime-local" name="order-date-start" value="2021-05-13T15:15" id="input-order-date-start">
+                <br>
+                <label>　～　</label>
+                <br>
+                <input type="datetime-local" name="order-date-end" value="2021-05-13T15:15" id="input-order-date-end">
+                <br>
+                <br>
+                <label>開始日時:</label><br>
+                <input type="datetime-local" name="start-date-start" value="2021-05-13T15:15" id="input-start-date-start">
+                <br>
+                <label>　～　</label>
+                <br>
+                <input type="datetime-local" name="start-date-end" value="2021-05-13T15:15" id="input-start-date-end">
+              </form>
+              <br>
+              <h5>
+              <p id="output-message"></p>
+              <button onClick="return check();" onClick="show();" >確定</button>
+
+              </h5>
+
+            </div>
+          </div>
+        </div>
+        
+      <label for="trigger" class="open_btn">詳細条件検索</label>
+      </h5>
+      <!--新規追加-->
+      <h5 style="padding:0px 0px 0px 20px">
+        <div class="popup_wrap">
+          <input style="display: none" id="add-order" type="checkbox">
+          <div class="popup_overlay">
+            <label for="add-order" class="popup_trigger"></label>
+            <div class="popup_content">
+              <label for="add-order" class="close_btn">×</label>
+              <label>id:</label><br>
+              <input type="number" name="id" value="000000"><br><br>
+              <label>メニュー名:</label><br>
+              <input type="text" name="menu-title" value="abc">
+              <br>
+              <br>
+              <label>支払い：</label>
+              <select name="pull-down">
+                <option value="済">済</option>
+                <option value="未">未</option>
+                <option value="エラー">エラー</option>
+              </select>
+              <br>
+              <br>
+                <label>注文日:</label><br>
+                <input type="datetime-local" name="order-date" value="2021-05-13T15:15">
+              <br>
+              <br>
+                <label>開始日時:</label><br>
+                <input type="datetime-local" name="start-date" value="2021-05-13T15:15">
+              <br>
+              <br>
+              <h5>
+               
+              <button onClick="AddOrder();">追加</button></h5>
+            </div>
+          </div>
+        </div>
+        
+      <label for="add-order" class="open_btn">新規追加+</label>
+      </h5>
+      <br>
+      <br>
+
+
+      <!--表-->
+      <table>
+
+        <tr>
+          <th>オーダーID</th> 
+          <th>スタッフID</th> 
+          <th>顧客ID</th> 
+          <th>メニュー名</th> 
+          <th>支払い</th> 
+          <th>注文日時</th>
+          <th>開始日時</th>
+        </tr>
+
+        <tr>
+          <td><a href="order-details.html">000001</a></td> 
+          <td><a href="schedule-set.html">000001</a></td> 
+          <td><a href="karte-details.html">000001</a></td> 
+          <td>コースA</td> 
+          <td>済</td>
+          <td>2021/03/22</td>
+          <td>2021/05/01 14:30</td>
+        </tr>
+        
+        <tr>
+          <td></td> 
+          <td><a href="schedule-set.html">000001</a></td> 
+          <td></td> 
+          <td></td> 
+          <td></td>
+          <td></td>
+          <td>2021/05/01 14:30</td>
+        </tr>
+
+        <tr>
+          <td><a href="order-details.html">000003</a></td> 
+          <td><a href="schedule-set.html">000002</a></td> 
+          <td><a href="karte-details.html">000003</a></td> 
+          <td>コースC</td> 
+          <td>済</td>
+          <td>2021/04/22</td>
+          <td>2021/05/01 14:30</td>
+        </tr>
+
+      </table>
+      <br>
+      <h5 style="padding:0px 0px 0px 350px">1/1</h5>
+      <h5 style="padding:0px 0px 0px 340px">-件</h5>
+
+
+  </main>
+
+  <footer></footer>
+
+      <!-- ↓JavaScriptの処理を追加 -->
+      <script type="text/javascript">
+        function check(){
+          if (order_form.id.value == ""){
+            //空の場合
+            alert("idを入力してください");    //エラーメッセージを出力
+            return false;    //ボタンの動作をキャンセル
+          }else{
+            //IDが入力されている場合
+            document.getElementById("output-message").innerHTML = "test";
+            show();   //入力した条件を画面に表示
+            return true; 
+          }
+        }
+        const show = () => {
+          const textId = document.getElementById("input-id");
+          const inputId = textId.value;
+          const textMenu = document.getElementById("input-menu");
+          const inputMenu = textMenu.value;
+          const textPrice = document.getElementById("input-price");
+          const inputPrice = textPrice.value;
+          const textOrderDateStart = document.getElementById("input-order-date-start");
+          const inputOrderDateStart = textOrderDateStart.value;
+          const textOrderDateEnd = document.getElementById("input-order-date-end");
+          const inputOrderDateEnd = textOrderDateEnd.value;
+          const textStartDateStart = document.getElementById("input-start-date-start");
+          const inputStartDateStart = textStartDateStart.value;
+          const textStartDateEnd = document.getElementById("input-start-date-end");
+          const inputStartDateEnd = textStartDateEnd.value;
+
+
+          //テキストボックスの値を使って、出力するメッセージを生成する
+          const output = "検索条件<br>" + "ID：" + inputId + "　　メニュー名：" + inputMenu + "　　支払い："  + inputPrice + "<br>注文日時：" + inputOrderDateStart + "　～　" + inputOrderDateEnd + "<br>開始日時：" + inputStartDateStart + "　～　" + inputStartDateEnd;
+          //出力用のp要素にメッセージを表示
+          document.getElementById("output-message").innerHTML = output;
+          document.getElementById("trigger").checked = false;
+
+        }
+
+        //新規追加は仮置きで閉じるだけの処理を用意
+        function AddOrder(){
+          document.getElementById("add-order").checked = false;
+        }
+      </script>
+</html>

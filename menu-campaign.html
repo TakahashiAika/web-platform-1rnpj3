@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="table.css">
+    <link rel="stylesheet" type="text/css" href="popup.css">
+  </head>
+  <header>
+    
+    <h2>Ethicart</h2>
+    <h3>本部：アカウント名</h3>
+    <h1 class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+          <nuv>
+            <menu-title>
+                <in-title>Ethicart</in-title>
+            </menu-title>
+            <ul>
+                <li>
+                    <li><a href="user-change.html">ユーザー切替</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">TOP</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">オーダー検索</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-list.html">顧客情報検索</a></li>
+                </li>
+                <li>
+                    <li><a href="menu.html">メニュー設定</a></li>
+                </li>
+                <li>
+                    <li><a href="schedule.html">スケジュール確認</a></li>
+                </li>
+                <li>
+                    <li><a href="info-set.html">お知らせ設定</a></li>
+                </li>
+                <li>
+                    <li><a href="log-view.html">システムログ確認</a></li>
+                </li>
+                <li>
+                    <li><a href="account.html">アカウント設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office.html">店舗設定</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-set.html">顧客情報項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="menu-set.html">メニュー項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="staff-set.html">スタッフ項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office-set.html">店舗項目設定</a></li>
+                </li>
+            </ul>
+          </nuv>
+        </div>
+        <!--ここまでメニュー-->
+    </h1>
+
+
+  </header>
+  <menu></menu>
+  <main>
+    <!--ぱんくず-->
+    <div class="cp_breadcrumb">
+    <ul class="breadcrumbs">
+    <li><a href="top.html">TOP</a></li>
+    <li><a href="menu.html">メニュー設定</a></li>
+    <li>キャンペーンコード一覧</li>
+    </ul>
+    </div>
+
+
+      <h4>キャンペーンコード一覧</h4>
+      <br>
+      <br>
+      <!--簡易検索-->
+      <p>
+        <input id="radio-a" type="radio" name="search" value="済" checked><label for="radio-a">支払い：済</label>
+        <input id="radio-b" type="radio" name="search" value="未"><label for="radio-b">支払い：未</label><br>
+      </p>
+      <br>
+
+      <p  style="color: var(--main-on-color)" id="output-message"></p>
+
+      <br>
+      <!--詳細条件検索-->
+      <h5>
+        <div class="popup_wrap">
+          <input style="display: none" id="trigger" type="checkbox">
+          <div class="popup_overlay">
+            <label for="trigger" class="popup_trigger"></label>
+            <div class="popup_content">
+              <label for="trigger" class="close_btn">×</label>
+              <form action="" method="get" name="order_form">
+                <label>id:</label><br>
+                <input type="number" name="id" value="000000" id="input-id"><br><br>
+                <label>キャンペーンコード名:</label><br>
+                <input type="text" name="menu-title" value="abc" id="input-menu">
+                <br>
+                <br>
+                <label>対象：</label>
+                <select name="pull-down" id="input-invalid">
+                  <option value="全て">全て</option>
+                  <option value="指定のみ">指定のみ</option>
+                  <option value="施術のみ">施術のみ</option>
+                  <option value="物販のみ">物販のみ</option>
+                </select>
+                <br>
+                <br>
+                <label>効果：</label>
+                <select name="pull-down" id="input-invalid">
+                  <option value="割引">割引</option>
+                  <option value="値引">値引</option>
+                  <option value="固定額">固定額</option>
+                </select>
+                <br>
+                <br>
+                <label>効果詳細:</label><br>
+                <input type="text" name="" value="abc" id="">
+                <br>
+                <br>
+                <label>状態：</label>
+                <select name="pull-down" id="input-invalid">
+                  <option value="未設定">未設定</option>
+                  <option value="有効">有効</option>
+                  <option value="無効">無効</option>
+                </select>
+                <br>
+                <br>
+              </form>
+              <br>
+              <h5>
+              <p id="output-message"></p>
+              <button onClick="return check();" onClick="show();" >確定</button>
+
+              </h5>
+
+            </div>
+          </div>
+        </div>
+        
+      <label for="trigger" class="open_btn">詳細条件検索</label>
+      </h5>
+      <!--新規追加-->
+      <h5 style="padding:0px 0px 0px 20px">
+        <div class="popup_wrap">
+          <input style="display: none" id="add-order" type="checkbox">
+          <div class="popup_overlay">
+            <label for="add-order" class="popup_trigger"></label>
+            <div class="popup_content">
+              <label for="add-order" class="close_btn">×</label>
+                <label>id:</label><br>
+                <input type="number" name="id" value="000000" id="input-id"><br><br>
+                <label>キャンペーンコード名:</label><br>
+                <input type="text" name="menu-title" value="abc" id="input-menu">
+                <br>
+                <br>
+                <label>説明:</label><br>
+                <input type="text" name="menu-text" value="abc" id="input-menu">
+                <br>
+                <br>
+                <label>価格:</label><br>
+                <input type="number" name="price" value="0" id="input-id"><br><br>
+                <label>原価:</label><br>
+                <input type="number" name="cost" value="0" id="input-id"><br><br>
+                <label>時間:</label><br>
+                <input type="text" name="time" value="00:00" id="input-id"><br><br>
+                <label>登録日時:</label><br>
+                <input type="datetime-local" name="start-date-start" value="2021-05-13T15:15" id="input-start-date-start">
+                <br>
+                <label>　～　</label>
+                <br>
+                <input type="datetime-local" name="start-date-end" value="2021-05-13T15:15" id="input-start-date-end">
+              <br>
+              <br>
+              <h5>
+               
+              <button onClick="AddOrder();">追加</button></h5>
+            </div>
+          </div>
+        </div>
+        
+      <label for="add-order" class="open_btn">新規追加+</label>
+      </h5>
+      <br>
+      <br>
+
+
+      <!--表-->
+      <table style="width: 720px">
+
+        <tr>
+          <th>ID</th> 
+          <th>キャンペーンコード名</th> 
+          <th>対象</th> 
+          <th>効果</th> 
+          <th>効果詳細</th> 
+          <th>状態</th>
+        </tr>
+
+        <tr>
+          <td><a href="menu-campaign-details.html">000001</a></td> 
+          <td>code0001</td> 
+          <td>全て</td> 
+          <td>割引</td>
+          <td>20%</td>
+          <td>有効</td>
+        </tr>
+        
+
+        <tr>
+          <td><a href="menu-campaign-details.html">000001</a></td> 
+          <td>code0002</td> 
+          <td>施術のみ</td> 
+          <td>割引</td>
+          <td>10%</td>
+          <td>有効</td>
+        </tr>
+        
+
+        <tr>
+          <td><a href="menu-campaign-details.html">000001</a></td> 
+          <td>code0003</td> 
+          <td>物販のみ</td> 
+          <td>値引き</td>
+          <td>1000</td>
+          <td>有効</td>
+        </tr>
+        
+
+        <tr>
+          <td><a href="menu-campaign-details.html">000001</a></td> 
+          <td>code0004</td> 
+          <td>指定のみ</td> 
+          <td>固定額</td>
+          <td>0</td>
+          <td>有効</td>
+        </tr>
+
+        
+
+      </table>
+      <br>
+      <h5 style="padding:0px 0px 0px 310px">1/1</h5>
+      <h5 style="padding:0px 0px 0px 320px">3件</h5>
+
+
+  </main>
+
+  <footer></footer>
+
+      <!-- ↓JavaScriptの処理を追加 -->
+      <script type="text/javascript">
+        function check(){
+          if (order_form.id.value == ""){
+            //空の場合
+            alert("idを入力してください");    //エラーメッセージを出力
+            return false;    //ボタンの動作をキャンセル
+          }else{
+            //IDが入力されている場合
+            document.getElementById("output-message").innerHTML = "test";
+            show();   //入力した条件を画面に表示
+            return true; 
+          }
+        }
+        const show = () => {
+          const textId = document.getElementById("input-id");
+          const inputId = textId.value;
+
+          //テキストボックスの値を使って、出力するメッセージを生成する
+          const output = "検索条件<br>" + "ID：" + inputId ;
+          //出力用のp要素にメッセージを表示
+          document.getElementById("output-message").innerHTML = output;
+          document.getElementById("trigger").checked = false;
+
+        }
+
+        //新規追加は仮置きで閉じるだけの処理を用意
+        function AddOrder(){
+          document.getElementById("add-order").checked = false;
+        }
+      </script>
+</html>

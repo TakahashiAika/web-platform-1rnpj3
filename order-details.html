@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <header>
+    
+    <h2>Ethicart</h2>
+    <h3>本部：アカウント名</h3>
+    <h1 class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+          <nuv>
+            <menu-title>
+                <in-title>Ethicart</in-title>
+            </menu-title>
+            <ul>
+                <li>
+                    <li><a href="user-change.html">ユーザー切替</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">TOP</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">オーダー検索</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-list.html">顧客情報検索</a></li>
+                </li>
+                <li>
+                    <li><a href="menu.html">メニュー設定</a></li>
+                </li>
+                <li>
+                    <li><a href="schedule.html">スケジュール確認</a></li>
+                </li>
+                <li>
+                    <li><a href="info-set.html">お知らせ設定</a></li>
+                </li>
+                <li>
+                    <li><a href="log-view.html">システムログ確認</a></li>
+                </li>
+                <li>
+                    <li><a href="account.html">アカウント設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office.html">店舗設定</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-set.html">顧客情報項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="menu-set.html">メニュー項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="staff-set.html">スタッフ項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office-set.html">店舗項目設定</a></li>
+                </li>
+            </ul>
+          </nuv>
+        </div>
+        <!--ここまでメニュー-->
+    </h1>
+
+
+  </header>
+
+  <main>
+    <!--ぱんくず-->
+    <div class="cp_breadcrumb">
+    <ul class="breadcrumbs">
+    <li><a href="top.html">TOP</a></li>
+    <li>オーダー詳細</li>
+    </ul>
+    </div>
+
+    <h4>オーダー詳細</h4><br><br>
+    <label>id:000001</label><br><br>
+    <label>メニュー/オプション:</label><br>
+    <label>ID：<a href="menu-details.html">000003</a></label><br>
+    <label>名称：--------</label><br><br>
+    <label>顧客:</label><br>
+    <label>ID：<a href="karte-details.html">000003</a></label><br>
+    <label>氏名：--------</label>
+    <br>
+    <br>
+    <label>金額：12,345円</label>
+    <br>
+    <br>
+    <label>支払い方法：</label>
+    <select name="pull-down">
+      <option value="クレジット">クレジット</option>
+      <option value="当日現金">当日現金</option>
+      <option value="後払い">後払い</option>
+    </select>
+    <br>
+    <br>
+    <label>支払い：</label>
+    <select name="pull-down">
+      <option value="1">済</option>
+      <option value="0">未</option>
+      <option value="-1">エラー</option>
+    </select>
+    <br>
+    <br>
+      <label>注文日:</label><br>
+      <input type="datetime-local" name="order-date" value="">
+    <br>
+    <br>
+      <label>開始日時:</label><br>
+      <input type="datetime-local" name="start-date" value=""><br><br>
+    <label>担当スタッフ/備品一覧:</label><br>
+    <label>ID：<a href="schedule-set.html">000001</a>　スタッフ名</label><br>
+    <label>ID：<a href="schedule-set.html">000002</a>　部屋名</label><br>
+    <label>ID：<a href="schedule-set.html">000003</a>　設備名</label><br><br>
+    <label>連絡事項:</label><br>
+    <input style="width: 300px;height: 50px;" type="text" name="menu-title" value=""><br><br>
+    <label>備考:</label><br>
+    <input style="width: 300px;height: 50px;" type="text" name="menu-title" value=""><br>
+    <br>
+    <br>
+    <p  style="color: var(--main-on-color)" id="output-message"></p>
+    <br>
+    <h5><button onClick="ChangeOrder();">編集</button>
+    <br>
+    <br>
+    <button onclick="history.back()">戻る</button></h5>
+  </main>
+
+
+
+  <footer></footer>
+
+  <!-- ↓JavaScriptの処理を追加 -->
+  <script type="text/javascript">
+
+    //編集は仮置きでメッセージを表示するだけの処理を用意
+    function ChangeOrder(){
+      showChangeMessage();
+    }
+    const showChangeMessage = () => {
+      const output = "編集完了";
+      document.getElementById("output-message").innerHTML = output;
+    }
+  </script>
+
+</html>

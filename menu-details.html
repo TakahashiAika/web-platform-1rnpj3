@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="menu-details.css">
+  </head>
+  <header>
+    
+    <h2>Ethicart</h2>
+    <h3>本部：アカウント名</h3>
+    <h1 class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+          <nuv>
+            <menu-title>
+                <in-title>Ethicart</in-title>
+            </menu-title>
+            <ul>
+                <li>
+                    <li><a href="user-change.html">ユーザー切替</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">TOP</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">オーダー検索</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-list.html">顧客情報検索</a></li>
+                </li>
+                <li>
+                    <li><a href="menu.html">メニュー設定</a></li>
+                </li>
+                <li>
+                    <li><a href="schedule.html">スケジュール確認</a></li>
+                </li>
+                <li>
+                    <li><a href="info-set.html">お知らせ設定</a></li>
+                </li>
+                <li>
+                    <li><a href="log-view.html">システムログ確認</a></li>
+                </li>
+                <li>
+                    <li><a href="account.html">アカウント設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office.html">店舗設定</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-set.html">顧客情報項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="menu-set.html">メニュー項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="staff-set.html">スタッフ項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office-set.html">店舗項目設定</a></li>
+                </li>
+            </ul>
+          </nuv>
+        </div>
+        <!--ここまでメニュー-->
+    </h1>
+
+
+  </header>
+
+  <main>
+    <!--ぱんくず-->
+    <div class="cp_breadcrumb">
+    <ul class="breadcrumbs">
+    <li><a href="top.html">TOP</a></li>
+    <li><a href="menu.html">メニュー設定</a></li>
+    <li>メニュー詳細</li>
+    </ul>
+    </div>
+    
+    <h4>メニュー詳細</h4><br><br>
+    <label>ID:</label><br>
+    <input type="number" name="id" value=""><br><br>
+    <label>施術/物販:</label>
+    <select name="">
+      <option value="0">-</option>
+      <option value="1">施術</option>
+      <option value="2">物販</option>
+    </select>
+    <br>
+    <br>
+    <label>メニュー名:</label><br>
+    <input type="text" name="menu-title" value=""><br>
+    <br>
+    <br>
+    <label>画像URL:</label><br>
+    <input type="text" name="menu-image" value=""><br>
+    <br>
+    <br>
+    <label>概要：</label><br>
+    <input style="padding: 70px 0px" type="text" name="menu-text" value=""><br>
+    <br>
+    <br>
+    <label>説明：</label><br>
+    <input style="padding: 70px 0px" type="text" name="menu-text" value=""><br>
+    <br>
+    <br>
+    <label>価格:</label><br>
+    <input type="number" name="price" value="">
+    <br>
+    <br>
+    <label>原価:</label><br>
+    <input type="number" name="price" value="">
+    <br>
+    <br>
+    <label>施術時間:</label><br>
+    <input type="number" name="price" value="">
+    <br>
+    <br>
+    <label>タグ:</label>
+    <select name="gender">
+      <option value="0">選択なし</option>
+      <option value="1">マッサージ</option>
+      <option value="2">アロマ</option>
+      <option value="3">90分コース</option>
+    </select>
+    <button style="height: 35px">選択</button>
+    <br><br>
+    <label>タグ追加・編集</label><br>
+    <label>色:</label>
+    <input style="width: 60px" type="text" name="menu-title" value="">
+    <label>字:</label>
+    <input style="width: 60px" type="text" name="menu-title" value="">
+    <br>
+    <br>
+    <button style="height: 30px;">タグ編集</button>
+    <button style="height: 30px;">メニューに追加</button>
+    <br>
+    <br>
+    <label>選択したタグ:</label><br><br>
+    <label for="" class="option_btn2">　マッサージ　　×</label>
+    <label for="" class="option_btn2">　90分コース　　×</label><br>
+    <label>オプション:</label>
+    <select name="">
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+    </select>
+    <br>
+    <select name="">
+      <option value="A">フェイシャル</option>
+      <option value="B">フットケア</option>
+      <option value="C">ボディ</option>
+      <option value="D">ネイル</option>
+    </select>
+    <button style="height: 35px">選択</button>
+    <br><br>
+    <label>選択した初期オプション:</label><br>
+    <label for="" class="option_btn2">　フェイシャル　　×</label>
+    <label for="" class="option_btn2">　時間追加15分　　×</label><br>
+    <label>オプション:</label>
+    <select name="">
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+    </select>
+    <button style="height: 35px">選択</button><br><br>
+    <label>選択したカスタムオプション:</label><br>
+    <label for="" class="option_btn">　A　　×</label>
+    <label for="" class="option_btn">　A　　×</label>
+    <label for="" class="option_btn">　B　　×</label>
+    <label for="" class="option_btn">　B　　×</label>
+    <br>
+    <br>
+    <label>購入時の注意事項：</label><br>
+    <input style="padding: 70px 0px" type="text" name="menu-text" value=""><br>
+    <br><br>
+    <label>適用するキャンペーン:</label>
+    <select name="">
+      <option value="code0001">code0001</option>
+      <option value="code0002">code0002</option>
+      <option value="code0003">code0003</option>
+      <option value="code0004">code0004</option>
+    </select>
+    <button style="height: 35px">選択</button><br><br>
+    <label>適用したキャンペーン:</label><br>
+    <label for="" class="option_btn2">　code0002　　×</label>
+    <label for="" class="option_btn2">　code0004　　×</label>
+    <br><br>
+    <label>必要な備品:</label>
+    <select name="">
+      <option value="部屋A">部屋A</option>
+      <option value="機器１">機器１</option>
+      <option value="機器２">機器２</option>
+      <option value="機器３">機器３</option>
+    </select>
+    <button style="height: 35px">選択</button><br><br>
+    <label>登録した備品:</label><br>
+    <label for="" class="option_btn">部屋A　×</label>
+    <label for="" class="option_btn">機器１　×</label>
+    <br><br>
+    <label>必要なスキル:</label>
+    <select name="">
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+    </select>
+    <button style="height: 35px">選択</button><br><br>
+    <label>登録したスキル:</label><br>
+    <label for="" class="option_btn">　A　　×</label>
+    <label for="" class="option_btn">　B　　×</label>
+    <br><br>
+    <label>登録日時:2021/06/17 19:56</label>
+    <br>
+    <br>
+    <p  style="color: var(--main-on-color)" id="output-message"></p>
+    <br>
+    <br>
+    <button onclick="location.href='./menu-view.html'">プレビュー</button></h5>
+    <br>
+    <br>
+    <h5><button onClick="ChangeMenu();">編集</button>
+    <br>
+    <br>
+    <button onclick="history.back()">戻る</button></h5>
+  </main>
+
+
+
+  <footer></footer>
+
+  <!-- ↓JavaScriptの処理を追加 -->
+  <script type="text/javascript">
+
+    //編集は仮置きでメッセージを表示するだけの処理を用意
+    function ChangeMenu(){
+      showChangeMessage();
+    }
+    const showChangeMessage = () => {
+      const output = "編集完了";
+      document.getElementById("output-message").innerHTML = output;
+    }
+  </script>
+
+</html>

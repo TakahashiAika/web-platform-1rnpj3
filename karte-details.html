@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="tab.css">
+  </head>
+
+  <header>
+    
+    <h2>Ethicart</h2>
+    <h3>本部：アカウント名</h3>
+    <h1 class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+          <nuv>
+            <menu-title>
+                <in-title>Ethicart</in-title>
+            </menu-title>
+            <ul>
+                <li>
+                    <li><a href="user-change.html">ユーザー切替</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">TOP</a></li>
+                </li>
+                <li>
+                    <li><a href="top.html">オーダー検索</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-list.html">顧客情報検索</a></li>
+                </li>
+                <li>
+                    <li><a href="menu.html">メニュー設定</a></li>
+                </li>
+                <li>
+                    <li><a href="schedule.html">スケジュール確認</a></li>
+                </li>
+                <li>
+                    <li><a href="info-set.html">お知らせ設定</a></li>
+                </li>
+                <li>
+                    <li><a href="log-view.html">システムログ確認</a></li>
+                </li>
+                <li>
+                    <li><a href="account.html">アカウント設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office.html">店舗設定</a></li>
+                </li>
+                <li>
+                    <li><a href="karte-set.html">顧客情報項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="menu-set.html">メニュー項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="staff-set.html">スタッフ項目設定</a></li>
+                </li>
+                <li>
+                    <li><a href="office-set.html">店舗項目設定</a></li>
+                </li>
+            </ul>
+          </nuv>
+        </div>
+        <!--ここまでメニュー-->
+    </h1>
+
+
+  </header>
+
+
+  <main>
+    <!--ぱんくず-->
+    <div class="cp_breadcrumb">
+    <ul class="breadcrumbs">
+    <li><a href="top.html">TOP</a></li>
+    <li><a href="karte-list.html">顧客情報検索</a></li>
+    <li>顧客情報詳細</li>
+    </ul>
+    </div>
+    
+    <h4>顧客情報詳細</h4><br><br>
+    <div class="area">
+    <input type="radio" name="tab_name" id="tab1" checked>
+    <label class="tab_class" for="tab1">初回</label>
+    <div class="content_class">
+      
+      <form action="" method="get" name="karte_form">
+        <br>
+        <br>
+        <br>
+        <label>ID:</label>
+        <label>000001</label><br><br>
+        <label>氏名:</label><br>
+        <input type="text" name="name" placeholder="氏名" id="input-name">
+        <br>
+        <br> 
+        <label>メールアドレス:</label><br>
+        <input type="email" name="email-address" value="" placeholder="xxxx@example.com">
+        <br>
+        <br>
+        <label>パスワード:</label><br>
+        <input type="password" name="passward" value="" maxlength="8" placeholder="〜8文字で入力">
+        <br>
+        <br>
+        <label>性別：</label>
+        <select name="gender" id="input-gender">
+          <option value="選択なし">選択なし</option>
+          <option value="女">女</option>
+          <option value="男">男</option>
+        </select>
+        <br>
+        <br>
+        <label>お知らせ：</label>
+        <select name="info" id="input-info">
+          <option value="選択なし">選択なし</option>
+          <option value="受け取らない">受け取らない</option>
+          <option value="受け取る">受け取る</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label>アンケート:</label><br>
+        <label>どこで知りましたか？</label><br>
+        <input id="1" type="checkbox" name="route" value="SNS" >
+        <label for="SNS">SNS</label>
+        <input id="2" type="checkbox" name="route" value="広告" >
+        <label for="広告">広告</label>
+        <input id="3" type="checkbox" name="route" value="雑誌" >
+        <label for="雑誌">雑誌</label>
+        <input id="4" type="checkbox" name="route" value="知人からの紹介" >
+        <label for="知人からの紹介">知人からの紹介</label>
+      </form>
+      </div>
+      <input type="radio" name="tab_name" id="tab2" >
+      <label class="tab_class" for="tab2">来店時</label>
+      <div class="content_class"><br><br>
+        <input type="checkbox" name="q1" value="1"> 施術前の確認事項に同意します
+      </div>
+      <input type="radio" name="tab_name" id="tab3" >
+      <label class="tab_class" for="tab3">退店時</label>
+      <div class="content_class"><br><br>
+        
+        <br>
+        <br>
+        <label>アンケート:</label><br>
+        <label>よろしければ評価をお願いします</label><br>
+        <input id="1" type="radio" name="route" value="1" >
+        <label for="">悪い</label>
+        <input id="2" type="radio" name="route" value="2" >
+        <label for="">少し悪い</label>
+        <input id="3" type="radio" name="route" value="3" >
+        <label for="">ふつう</label>
+        <input id="4" type="radio" name="route" value="4" >
+        <label for="">少し良い</label>
+        <input id="5" type="radio" name="route" value="5" >
+        <label for="">良い</label>
+      </div>
+      <input type="radio" name="tab_name" id="tab4" >
+      <label class="tab_class" for="tab4">メモ</label>
+      <div class="content_class"><br><br>
+        <p>メモ欄</p><br>
+        <input style="width: 500px;height: 200px;" type="text" name="name" placeholder="ご意見・ご感想や覚書などございましたらこちらへ" id="input-name">
+      </div>
+      <input type="radio" name="tab_name" id="tab5" >
+      <label class="tab_class" for="tab5">利用履歴</label>
+      <div class="content_class">
+        <br>
+        <br>
+        <br>
+        <table style="width: 800px;text-align: left;">
+
+          <tr>
+            <th>注文ID</th> 
+            <th>メニュー名</th> 
+            <th>支払い</th> 
+            <th>注文日時</th>
+            <th>開始日時</th>
+          </tr>
+
+          <tr>
+            <td><a href="order-details.html">000001</a></td> 
+            <td>コースA</td> 
+            <td>済</td>
+            <td>2021/03/22</td>
+            <td>2021/03/26 15:00</td>
+          </tr>
+          
+          <tr>
+            <td><a href="order-details.html">000002</a></td> 
+            <td>コースB</td> 
+            <td>未</td>
+            <td>2021/05/02</td>
+            <td>2021/06/18 14:30</td>
+          </tr>
+
+          <tr>
+            <td><a href="order-details.html">000003</a></td> 
+            <td>コースC</td> 
+            <td>済</td>
+            <td>2021/04/22</td>
+            <td>2021/07/01 09:00</td>
+          </tr>
+
+        </table>
+      </div>
+      <input type="radio" name="tab_name" id="tab6" >
+      <label class="tab_class" for="tab6">業務連絡</label>
+      <div class="content_class"><br><br>
+        <p>業務連絡</p><br>
+        <input style="width: 500px;height: 200px;" type="text" name="name" placeholder="エンドユーザー権限では非表示" id="input-name">
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <p  style="color: var(--main-on-color)" id="output-message"></p>
+    <br>
+    <h5><button onClick="ChangeKarte();">編集</button>
+    <br>
+    <br>
+    <button onclick="history.back()">戻る</button></h5>
+  </main>
+
+
+
+  <footer></footer>
+
+  <!-- ↓JavaScriptの処理を追加 -->
+  <script type="text/javascript">
+
+    //編集は仮置きでメッセージを表示するだけの処理を用意
+    function ChangeKarte(){
+      showChangeMessage();
+    }
+    const showChangeMessage = () => {
+      const output = "編集完了";
+      document.getElementById("output-message").innerHTML = output;
+    }
+  </script>
+
+</html>

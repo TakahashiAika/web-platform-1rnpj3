@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../reset.css">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link rel="stylesheet" type="text/css" href="../popup.css">
+    <link rel="stylesheet" type="text/css" href="../schedule.css">
+    <link rel="stylesheet" type="text/css" href="color.css">
+  </head>
+
+  
+  <header>
+    
+    <h2>Ethicart</h2>
+    <h3>FC加盟店：アカウント名</h3>
+    <h1 class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+          <nuv>
+            <menu-title>
+                <in-title>Ethicart</in-title>
+            </menu-title>
+            <ul>
+                <li>
+                    <li><a href="../user-change.html">ユーザー切替</a></li>
+                </li>
+                <li>
+                    <li><a href="info.html">TOP</a></li>
+                </li>
+                <li>
+                    <li><a href="./karte.html">顧客</a></li>
+                </li>
+                <li>
+                    <li><a href="./menu.html">メニュー</a></li>
+                </li>
+                <li>
+                    <li><a href="./order.html">オーダー</a></li>
+                </li>
+                <li>
+                    <li><a href="./schedule.html">スタッフ/スケジュール</a></li>
+                </li>
+                <li>
+                    <li><a href="./info.html">お知らせ</a></li>
+                </li>
+            </ul>
+          </nuv>
+        </div>
+        <!--ここまでメニュー-->
+    </h1>
+
+
+  </header>
+
+  <main>
+    <!--ぱんくず-->
+    <div class="cp_breadcrumb">
+    <ul class="breadcrumbs">
+    <li><a href="info.html">TOP</a></li>
+    <li><a href="schedule.html">スタッフ・備品一覧</a></li>
+    <li>スケジュール表示　月</li>
+    </ul>
+    </div>
+    
+    <h4>スケジュール確認</h4>　<p>予約済/予約枠</p>
+    <p><label onclick="location.href='./schedule-daily.html'" style="left: 10px" for="" class="prev_btn">日</label></p>
+    <p><label onclick="location.href='./schedule-weekly.html'" style="left: 10px" for="" class="entry_btn">週</label></p>
+    <p><label onclick="location.href='./schedule-monthly.html'" style="left: 10px" for="" class="next_btn">月</label></p>
+    <br><br><br><br>
+
+    <h5 style="color: var(--main-fg-color)">検索条件：スタッフ名：----,-----,-----</h5>　
+    <table class="schedule_table">
+      <thead>
+        <tr>
+          <th>（月）</th>
+          <th>（火）</th>
+          <th>（水）</th>
+          <th>（木）</th>
+          <th>（金）</th>
+          <th>（土）</th>
+          <th>（日）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color:var(--main-on-color)">4月26日<br><a href="">174/330</a></td>
+          <td style="color:var(--main-on-color)">4月27日<br><a href="">220/660</a></td>
+          <td style="color:var(--main-on-color)">4月28日<br><a href="">220/660</a></td>
+          <td style="color:var(--main-on-color)">4月29日<br><a href="">484/770</a></td>
+          <td style="color:var(--main-on-color)">4月30日<br><a href="">174/330</a></td>
+          <td>5月1日<br><a href="schedule-details.html">220/660</a></td>
+          <td>5月2日<br><a href="schedule-details.html">220/660</a></td>
+        </tr>
+        <tr>
+          <td>5月3日<br><a href="schedule-details.html">174/330</a></td>
+          <td>5月4日<br><a href="schedule-details.html">220/660</a></td>
+          <td>5月5日<br><a href="schedule-details.html">220/660</a></td>
+          <td>5月6日<br><a href="schedule-details.html">484/770</a></td>
+          <td>5月7日<br><a href="schedule-details.html">174/330</a></td>
+          <td>5月8日<br><a href="schedule-details.html">220/660</a></td>
+          <td>5月9日<br><a href="schedule-details.html">220/660</a></td>
+        </tr>
+        <tr>
+          <td>5月10日<br><a href="schedule-details.html">174/330</a></td>
+          <td>5月11日<br><a href="schedule-details.html">220/660</a></td>
+          <td>5月12日<br><a href="schedule-details.html">220/660</a></td>
+          <td>5月13日<br><a href="schedule-details.html">484/770</a></td>
+          <td>5月14日<br><a href="schedule-details.html">174/330</a></td>
+          <td>5月15日<br><a href="schedule-details.html">220/660</a></td>
+          <td>5月16日<br><a href="schedule-details.html">220/660</a></td>
+        </tr>
+        <tr>
+          <td>5月17日<br><a href="schedule-details.html">174/330</a></td>
+          <td>5月18日<br><a href="schedule-details.html">220/660</a></td>
+          <td>5月19日<br><a href="schedule-details.html">220/660</a></td>
+          <td>5月20日<br><a href="schedule-details.html">484/770</a></td>
+          <td>5月21日<br><a href="schedule-details.html">174/330</a></td>
+          <td>5月22日<br><a href="schedule-details.html">220/660</a></td>
+          <td>5月23日<br><a href="schedule-details.html">220/660</a></td>
+        </tr>
+        <tr>
+          <td>5月24日<br><a href="schedule-details.html">174/330</a></td>
+          <td>5月25日<br><a href="schedule-details.html">220/660</a></td>
+          <td>5月26日<br><a href="schedule-details.html">220/660</a></td>
+          <td>5月27日<br><a href="schedule-details.html">484/770</a></td>
+          <td>5月28日<br><a href="schedule-details.html">174/330</a></td>
+          <td>5月29日<br><a href="schedule-details.html">220/660</a></td>
+          <td>5月30日<br><a href="schedule-details.html">220/660</a></td>
+        </tr>
+        <tr>
+          <td>5月31日<br><a href="">174/330</a></td>
+          <td style="color:var(--main-on-color)">6月1日<br><a href="">220/660</a></td>
+          <td style="color:var(--main-on-color)">6月2日<br><a href="">220/660</a></td>
+          <td style="color:var(--main-on-color)">6月3日<br><a href="">484/770</a></td>
+          <td style="color:var(--main-on-color)">6月4日<br><a href="">174/330</a></td>
+          <td style="color:var(--main-on-color)">6月5日<br><a href="">220/660</a></td>
+          <td style="color:var(--main-on-color)">6月6日<br><a href="">220/660</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+  </main>
+
+
+
+  <footer>
+    <br>
+    <p><label style="left: 0px" for="" class="prev_btn">前の月</label></p>
+    <p><label style="left: 110px" for="" class="entry_btn">登録</label></p>
+    <p><label style="left: 270px" for="" class="next_btn">次の月</label></p>
+    <br>
+    <br>
+  </footer>
+
+
+</html>
